@@ -1,7 +1,15 @@
 const gulp = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
 
 function testGulp() {
-  console.log("Testando o Gulp");
+  console.log("Iniciando as Tarefas do Projeto");
 }
 
-exports.default = testGulp;
+function compilaSASS() {
+  return gulp
+    .src("./src/sass/**/*.scss")
+    .pipe(sass({ outputStyle: "compressed" }))
+    .pipe(gulp.dest("./build/css/"));
+}
+
+exports.default = gulp.parallel(testGulp, compilaSASS);
