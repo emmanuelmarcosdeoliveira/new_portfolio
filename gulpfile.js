@@ -5,11 +5,15 @@ function testGulp() {
   console.log("Iniciando as Tarefas do Projeto");
 }
 
-function compilaSASS() {
+function compilaSass() {
   return gulp
     .src("./src/sass/**/*.scss")
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(gulp.dest("./build/css/"));
 }
 
-exports.default = gulp.parallel(testGulp, compilaSASS);
+exports.default = gulp.parallel(compilaSass);
+
+exports.watch = function () {
+  gulp.watch("./src/sass/**/*.scss", gulp.parallel(compilaSass));
+}; // Aqui criamos uma função em paralelo para a execução do watch

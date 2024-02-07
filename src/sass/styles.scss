@@ -1,5 +1,11 @@
-$bg-color: #222222;
+@use "./utility/global";
+@use "./utility/mixin.scss";
 
-body {
-  background-color: $bg-color;
-}
+
+@use "./compontes/buttons.scss";
+@use "./compontes/scroller.scss";
+
+// Styles Sections
+@use "./header/header.scss";
+@use "./cta/cta.scss";
+

@@ -1,0 +1,55 @@
+@use "../utility/mixin" as mix;
+@use "../utility/cor";
+
+.cta {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 20px;
+
+  &__logo {
+    text-align: center;
+    img {
+      max-width: 200px;
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.cta__name {
+  @include mix.font-marca;
+  &__details {
+    @include mix.font-details;
+    letter-spacing: 4px;
+    text-align: center;
+    font-weight: 100;
+  }
+}
+
+.cta__name__details::after {
+  content: "";
+  display: inline-block;
+  padding-right: 2px;
+  background-color: cor.$primary;
+  width: 46px;
+  height: 2px;
+}
+.cta__name__details::before {
+  content: "";
+  display: inline-block;
+  background-color: cor.$primary;
+  width: 46px;
+  height: 2px;
+}
+
+.cta__description__h1 {
+  @include mix.font-big;
+  margin-top: 160px;
+  margin-bottom: 16px;
+  font-size: 48px;
+}
+
+.span_dest {
+    color: cor.$secondary;
+}
