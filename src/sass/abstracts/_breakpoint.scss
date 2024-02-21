@@ -1,0 +1,22 @@
+$dektop: 1440px;
+$tablet: 768px;
+$mobile: 480px;
+
+
+@mixin breakpoint($desktop) {
+  @media(width <= $desktop) {
+    @content;
+  }
+}
+
+@mixin breakpoint($tablet){
+  @media(width <= $tablet) {
+    @content;
+  }
+} 
+
+@mixin breakpoint($mobile){
+  @media(width <= $mobile) {
+    @content;
+  }
+} 

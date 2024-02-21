@@ -1,0 +1,94 @@
+@use "../base/cor";
+@use "../base/typography" as font;
+@use "./functions" as fun;
+@use "./breakpoint" as brk;
+
+@mixin font-big {
+  font-family: font.$font-padrao;
+  font-size: fun.pxParaEm(32px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--textcolor);
+}
+
+@mixin font-marca {
+  font-size: fun.pxParaEm(80px);
+  font-family: font.$font-1;
+  line-height: 1;
+  color: var(--textcolor);
+}
+
+@mixin font-details {
+  font-size: fun.pxParaEm(14px);
+  font-family: font.$font-1;
+  line-height: 1.2;
+  color: var(--textcolor);
+}
+@mixin font-h1 {
+  font-family: font.$font-padrao;
+  font-size: fun.pxParaEm(56px);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--textcolor);
+}
+
+@mixin font-h2 {
+  font-family: font.$font-padrao;
+  font-size: fun.pxParaEm(48px);
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--textcolor);
+}
+
+@mixin font-h3 {
+  font-family: font.$font-padrao;
+  font-size: fun.pxParaEm(40px);
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--textcolor);
+}
+
+@mixin font-h4 {
+  font-family: font.$font-padrao;
+  font-size: fun.pxParaEm(32px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--textcolor);
+}
+
+@mixin font-h5 {
+  font-family: font.$font-padrao;
+  font-size: fun.pxParaEm(24px);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--textcolor);
+}
+
+@mixin font-h6 {
+  font-family: font.$font-text;
+  font-size: fun.pxParaEm(20px);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--textcolor);
+}
+
+@mixin font-p-bold {
+  font-family: font.$font-text;
+  font-size: fun.pxParaEm(18px);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--textcolor);
+}
+
+@mixin font-p {
+  font-family: font.$font-text;
+  font-size: fun.pxParaEm(16px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--textcolor);
+  }
+
+// Sombras
+@mixin shadow-bt {
+  box-shadow: 2px 4px 2px #181818;
+}

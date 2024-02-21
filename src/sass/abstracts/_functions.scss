@@ -1,0 +1,4 @@
+@use "sass:math";
+@function pxParaEm($alvoemPixel, $contextoEmPixel: 16px) {
+  @return math.div($alvoemPixel, $contextoEmPixel) + em;
+}

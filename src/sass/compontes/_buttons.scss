@@ -1,0 +1,22 @@
+@use "../base/cor";
+@use "../abstracts/mixin" as mix;
+@use "../abstracts/functions" as fun;
+@use "../abstracts/breakpoint" as brk;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  @include mix.font-p-bold;
+  width: 220px;
+  border-radius: 16px;
+  padding-block: 8px;
+  padding-inline: 4px;
+  background-color: var(--primarycolor);
+  color: var(--bg-color);
+  @include mix.shadow-bt;
+  &:hover {
+    transition: 400ms;
+    background-color: var(--secondarycolor);
+  }
+}
