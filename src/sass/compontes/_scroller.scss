@@ -1,0 +1,39 @@
+@use "../abstracts/mixin" as mix;
+.scroller {
+  max-width: 1440px;
+  overflow: hidden;
+}
+
+.tag-list {
+  background-color: var(--primarycolor);
+  display: flex;
+  gap: 1rem;
+  .tag-list-item {
+    padding: 1rem;
+    @include mix.font-p-bold;
+    color: var(--bgcolor);
+  }
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+.scroller[data-animated="true"] .tag-list {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}

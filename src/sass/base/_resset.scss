@@ -9,7 +9,8 @@ html {
   scroll-behavior: smooth;
 }
 .main-content {
-  background-color: var(--bgcolor);
+  background: var(--bgcolor);
+  
 }
 
 .container {
@@ -34,3 +35,50 @@ body,
 html {
   overflow-x: hidden;
 }
+
+body::-webkit-scrollbar {
+  width: 0.75em;
+  background-color: #444b57;
+  margin-block: .5em;
+  
+  
+}
+body::-webkit-scrollbar-track {
+  visibility: hidden;
+ background: #444b57;
+border-radius: 16px;
+width: 0.75em;
+
+
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(127, 255, 212, 0.548);
+  border-radius: 16px;
+  height: 16px;
+  border: 2px solid var(--secondarycolor);
+ 
+}
+
+::-webkit-scrollbar {
+  width: 0.75em;
+ 
+  margin-block: .5em;
+  
+  
+}
+::-webkit-scrollbar-track {
+  visibility: hidden;
+ background: #444b57;
+border-radius: 16px;
+
+ 
+
+
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(127, 255, 212, 0.548);
+  border-radius: 16px;
+  height: 16px;
+  border: 2px solid var(--secondarycolor);
+  
+ }
