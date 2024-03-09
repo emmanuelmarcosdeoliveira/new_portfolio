@@ -1,22 +1,25 @@
 $dektop: 1440px;
+$notebook: 1200px;
 $tablet: 768px;
 $mobile: 480px;
 
-
-@mixin breakpoint($desktop) {
-  @media(width <= $desktop) {
-    @content;
+@mixin device($dispositivo) {
+  @if $dispositivo == desktop {
+    @media (width >= 1440px) {
+      @content;
+    }
+  }@else if $dispositivo == notebook {
+    @media (width<= 1200px) {
+      @content;
+    }
+  }@else if $dispositivo == tablet {
+    @media (width <= 768px) {
+      @content;
+    }
+  }@else if $dispositivo == mobile {
+    @media (width <= 480px) {
+      @content;
+    }
   }
 }
 
-@mixin breakpoint($tablet){
-  @media(width <= $tablet) {
-    @content;
-  }
-} 
-
-@mixin breakpoint($mobile){
-  @media(width <= $mobile) {
-    @content;
-  }
-} 

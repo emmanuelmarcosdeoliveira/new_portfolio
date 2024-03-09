@@ -5,6 +5,7 @@
 
 .btn {
   display: inline-flex;
+  margin-left: 10px;
   align-items: center;
   justify-content: space-evenly;
   @include mix.font-p-bold;
@@ -15,6 +16,14 @@
   background-color: var(--primarycolor);
   color: var(--bg-color);
   @include mix.shadow-bt;
+  @include brk.device(tablet) {
+    font-size: fun.pxParaEm(12px);
+    width: 180px;
+    height: 36px;
+    img {
+      width: 24px;
+    }
+  }
   &:hover {
     transition: 400ms;
     background-color: var(--secondarycolor);

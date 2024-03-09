@@ -1,4 +1,5 @@
 @use "../abstracts/mixin" as mix;
+@use "../abstracts/breakpoint" as brk;
 .scroller {
   max-width: 1440px;
   overflow: hidden;
@@ -8,10 +9,15 @@
   background-color: var(--primarycolor);
   display: flex;
   gap: 1rem;
-  .tag-list-item {
+  &__item {
     padding: 1rem;
+    rotate: -2deg;
     @include mix.font-p-bold;
     color: var(--bgcolor);
+    @include brk.device(tablet) {
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
   }
 }
 
@@ -29,7 +35,7 @@
 .scroller[data-animated="true"] .tag-list {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll 40s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 @keyframes scroll {

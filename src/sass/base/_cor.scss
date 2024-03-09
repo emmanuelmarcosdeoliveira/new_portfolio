@@ -1,13 +1,12 @@
 :root {
-  --bgcolor: #630563;
-  --primarycolor: #00bbf0;
-  --secondarycolor: #72e1d1;
-  --textcolor: #222222;
+  --bgcolor: #e0e1dd;
+  --primarycolor: #f5a911;
+  --secondarycolor: #0d1b2a;
+  --textcolor: #6c757d;
 }
 .darkMode {
-  --bgcolor:linear-gradient(45deg, #212632, #242a34, #3c4c5a);
+  --bgcolor: linear-gradient(45deg, #212632, #242a34, #3c4c5a);
   --primarycolor: #00bbf0;
   --secondarycolor: #72e1d1;
   --textcolor: #f7f7f7;
 }
-

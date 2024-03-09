@@ -1,0 +1,81 @@
+@use "../abstracts/mixin" as mix;
+@use "../abstracts/breakpoint" as brk;
+@use "../abstracts/functions" as fun;
+
+.cta {
+  display: flex;
+  flex: auto;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  gap: 10px;
+  @include brk.device(notebook) {
+    flex-wrap: wrap;
+  }
+}
+  
+  
+  .cta__logo {
+   text-align: center;
+  margin-bottom: 24px;
+  
+  &__img {
+    display: block;
+    max-width: 220px;
+    width: 100%;
+    margin: 0 auto;
+    @include brk.device(tablet) {
+      max-width: 160px;
+    }
+  }
+    &__lastname {
+      @include mix.font-marca;
+      @include brk.device(tablet) {
+        font-size: fun.pxParaEm(60px);
+      }
+    }
+    &__profession {
+      @include mix.font-details;
+      letter-spacing: 4px;
+      text-align: center;
+      font-weight: 100;
+      @include brk.device(tablet) {
+        font-size: fun.pxParaEm(10px);
+      }
+      &::after,
+      &::before {
+        content: "";
+        display: inline-block;
+        background-color: var(--primarycolor);
+        width: 22px;
+        height: 2px;
+        @include brk.device(tablet) {
+          width: 10px;
+        }
+      }
+    }
+  }
+
+.cta__description {
+  max-width: 660px;
+  width: 100%;
+  justify-content: center;
+  @include brk.device(notebook) {
+    max-width: 780px;
+  }
+   &__text {
+    margin: 24px 16px;
+    @include mix.font-h3;
+   
+    @include brk.device(tablet) {
+      font-size: fun.pxParaEm(28px);
+      justify-content: center;
+    }
+    @include brk.device(mobile) {
+      font-size: fun.pxParaEm(22px);
+      justify-content: center;
+    }
+  }
+  &__span {
+    color: var(--secondarycolor);
+  }
+}

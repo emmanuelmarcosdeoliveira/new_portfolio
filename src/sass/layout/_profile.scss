@@ -1,13 +1,21 @@
 @use "../abstracts/mixin" as mix;
+@use "../abstracts/breakpoint" as brk;
 @use "../base/cor";
 @use "../abstracts/functions" as fun;
+
 .profile {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  @include brk.device(notebook) {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .profile__circle {
+  order: 0;
   position: relative;
   width: 300px;
   height: 300px;
@@ -25,7 +33,7 @@
     background-image: url(../../../build/images/jpg/profile.jpg);
     background-size: cover;
     border-radius: 50%;
-    opacity: 70%;
+    opacity: 100%;
   }
   &__text {
     position: absolute;
@@ -47,20 +55,28 @@
 }
 
 .profile__social-media {
+  display: flex;
+  align-items: center;
+    @include brk.device(notebook) {
+    display: flex;
+    order: 0;
+    margin-inline: 48px;
+     }
   &__item {
+     @include brk.device(notebook) {
+     display: flex;
+      flex-direction: row;
+    }
     &__links {
       font-size: fun.pxParaEm(24px);
       display: block;
-      padding: 12px;
+      padding: 24px;
       transition: 400ms ease;
       i {
         color: var(--primarycolor);
       }
       &:hover {
         transform: scale(1.4);
-      }
-      &:first-child {
-        margin-top: 100px;
       }
     }
   }
@@ -77,6 +93,12 @@
     width: 100%;
     padding-right: 10px;
     position: relative;
+    @include brk.device(tablet) {
+      font-size: fun.pxParaEm(26px);
+    }
+    @include brk.device(mobile) {
+      font-size: fun.pxParaEm(20px);
+    }
     &::before {
       position: absolute;
       content: "";
@@ -93,19 +115,38 @@
     @include mix.font-h4;
     color: var(--primarycolor);
     padding-right: 10px;
+    @include brk.device(tablet) {
+      font-size: fun.pxParaEm(26px);
+    }
+    @include brk.device(mobile){
+      font-size: fun.pxParaEm(22px);
+    } 
   }
   &__profisional {
     @include mix.font-p-bold;
     margin-bottom: 16px;
     font-weight: 300;
     padding-right: 10px;
+    @include brk.device(tablet) {
+      font-size: fun.pxParaEm(16px);
+      width: 24ch;
+    } 
+    @include brk.device(mobile) {
+      font-size: fun.pxParaEm(12px);
+      width: 24ch;
+    } 
   }
+
   &__text {
     @include mix.font-p-bold;
     font-weight: 400;
     max-width: 640px;
     width: 100%;
     text-wrap: wrap;
+    @include brk.device(mobile) {
+      font-weight: 300;
+      font-size: fun.pxParaEm(14px);
+    }
   }
 }
 

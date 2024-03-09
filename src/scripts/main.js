@@ -30,10 +30,15 @@ function TextCircle() {
 }
 TextCircle();
 
-const theme = document.querySelector(".theme");
+const janelaModal = document.querySelectorAll(".experience .item .js-modal");
+console.log(janelaModal);
+const btnModal = document.querySelectorAll(".experience item .btn-corses");
+const modalClose = document.querySelectorAll(
+  ".experience item .js-modal-close"
+);
 
-function ativaTema() {
-  document.body.classList.toggle("darkMode");
-}
-
-theme.addEventListener("click", ativaTema);
+btnModal.addEventListener("click", () => {
+  janelaModal.forEach((item) => {
+    item.classList.add("active-modal");
+  });
+});

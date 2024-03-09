@@ -1,4 +1,4 @@
 // Abstracts
-@use "./functions";
-@use "./breakpoint";
+@forward "./functions";
+@forward "./breakpoint";
 @forward "./mixin";
